@@ -30,10 +30,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = [
-    '8000-balkaneros91-lavender-ha-ei6kqynzxz.us2.codeanyapp.com', 'localhost']
+# ALLOWED_HOSTS = [
+#     '8000-balkaneros91-lavender-ha-ei6kqynzxz.us2.codeanyapp.com', 'localhost']
 
-# ALLOWED_HOSTS = ['lavender-test-dfaa2a21f9c6.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['lavender-test-dfaa2a21f9c6.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -73,7 +73,10 @@ ROOT_URLCONF = 'lavender_haven.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'templates', 'allauth'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
