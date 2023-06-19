@@ -14,6 +14,11 @@ body {
     overflow-y: scroll;
 }
 
+.footer {
+    position: sticky;
+    bottom: 0;
+}
+
 
 
 /* fixed top navbar only on medium and up */
