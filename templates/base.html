@@ -62,7 +62,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 
     <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -71,15 +71,21 @@
     <header class="container-fluid fixed-top">
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+            <!-- Logo -->
             <a class="navbar-brand" href="{% url 'home' %}">Lavender Haven</a>
+
+            <!-- Toggled-burger menu -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            <!-- Collapsible menu -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
 
+                    <!-- Home dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                             aria-expanded="false">
@@ -92,6 +98,7 @@
                         </div>
                     </li>
 
+                    <!-- Store dropdown -->
                     <li class="nav-item active dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                             aria-expanded="false">
@@ -105,16 +112,19 @@
                         </div>
                     </li>
 
+                    <!-- Events link -->
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'events' %}">Events</a>
                     </li>
 
+                    <!-- Feedback link -->
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'testimonials' %}">Feedback</a>
                     </li>
 
                 </ul>
 
+                <!-- Search form -->
                 <form class="form-inline my-2 my-lg-0">
                     <div class="input-group">
                         <div class="input-group-prepend">
@@ -128,6 +138,8 @@
 
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                     <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+
+                        <!-- Account button -->
                         <li class="list-inline-item dropdown">
                             <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
@@ -150,6 +162,8 @@
                                 {% endif %}
                             </div>
                         </li>
+
+                        <!-- Shopping cart -->
                         <li class="list-inline-item">
                             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
                                 href="#">
@@ -172,6 +186,9 @@
         </nav>
 
     </header>
+
+
+
 
     {% if messages %}
     <div class="message-container"></div>
