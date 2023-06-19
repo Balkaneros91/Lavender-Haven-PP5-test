@@ -12,44 +12,44 @@
 {% endblock %}
 
 {% block content %}
-<div class="container h-100">
-    <div class="row h-100">
+<div class="container">
+    <div class="row">
 
-        <div class="container-fluid home-about">
-            <div class="row justify-content-center">
-                <div class="col-sm-10 col-md-8 text-center mt-3">
-                    <h2>{{ about_us.restaurant_name }}</h2>
-                    <p>{{ about_us.description }}</p>
-                </div>
+        <div class="col-12 home-about">
+            <div class="text-center mt-3">
+                <h2>{{ about_us.restaurant_name }}</h2>
+                <p>{{ about_us.description }}</p>
             </div>
         </div>
 
-        <div class="container-fluid about-things">
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-6">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="row">
-                        {% for things in things_we_offer|slice:"0:2" %}
-                        <div class="col-md-10">
-                            <div class="col-sm-12 text-center my-3">
-                                <h5>{{ things.title }}</h5>
-                                <p>{{ things.description }}</p>
-                            </div>
-                        </div>
-                        {% endfor %}
+                {% for things in things_we_offer|slice:"0:2" %}
+                <div class="col-sm-12 my-3">
+                    <div class="text-center">
+                        <h5>{{ things.title }}</h5>
+                        <p>{{ things.description }}</p>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="row">
-                        {% for things in things_we_offer|slice:"2:4" %}
-                        <div class="col-md-10">
-                            <div class="col-sm-12 text-center my-3">
-                                <h5>{{ things.title }}</h5>
-                                <p>{{ things.description }}</p>
-                            </div>
-                        </div>
-                        {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                {% for things in things_we_offer|slice:"2:4" %}
+                <div class="col-sm-12 my-3">
+                    <div class="text-center">
+                        <h5>{{ things.title }}</h5>
+                        <p>{{ things.description }}</p>
                     </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
     </div>
