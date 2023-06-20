@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     'subscription',
 
     # Other
+    'django_summernote',
     'crispy_forms',
     'storages',
 ]
