@@ -11,8 +11,3 @@ urlpatterns = [
     path('<slug:slug>/', views.testimonial_detail,
          name='testimonial_detail'),
 ]
-
-
-urlpatterns = [
-    path('', views.testimonials_view, name='testimonials')
-]

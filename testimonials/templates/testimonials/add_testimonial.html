@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!-- Code block for displaying current site's sub-page -->
+{% block extra_title %}| Add Testimonial{% endblock %}
+
+<!-- Code block for displaying  Add a testimonial page -->
+{% block content %}
+ class="container main-container mb-5">
+  <d class="row">
+    <div class="col-12 col-lg-6 offset-lg-3">
+            class="logo-font mb-4 text-center">Testimonial Management</h2>
+          <hclass="text-center">Add a testimonial</h5>
+        <hr>
+        v>
+  </v>
+
+<div class="row">
+         class="col-12 col-lg-6 offset-lg-3">
+          <fm method="POST" action="{% url 'add_testimonial' %}" class="form mb-2" enctype="multipart/form-data">
+            {% csrf_token %}
+                orm|crispy }}
+              <d class="text-center">
+                <a class="btn btn-outline-black" href="{% url 'testimonials' %}">Cancel</a>
+                    ton class="btn btn-black border-black" type="submit">Add Testimonial</button>
+              </v>
+        </form>
+        v>
+</div>
+v>
+{% endblock %}

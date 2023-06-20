@@ -4,8 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 
-from .forms import TestimonialForm
-from .models import Testimonial
+# from .forms import TestimonialForm
+# from .models import Testimonial
 
 # Create your views here.
 
@@ -15,10 +15,10 @@ from django.contrib.auth.models import User
 from .forms import TestimonialForm
 
 
-def testimonials_view(request):
-    """ A view to return the testimonials page """
+# def testimonials_view(request):
+#     """ A view to return the testimonials page """
 
-    return render(request, 'testimonials/testimonials.html')
+#     return render(request, 'testimonials/testimonials.html')
 
 
 def testimonial_list(request):
