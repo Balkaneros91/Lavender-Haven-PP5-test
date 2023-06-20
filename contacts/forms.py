@@ -1,15 +1,15 @@
 from django.forms import ModelForm
 from django import forms
-from .models import Message
+from .models import ContactMessage
 
 
-class MessageForm(ModelForm):
+class ContactMessageForm(ModelForm):
     class Meta:
-        model = Message
+        model = ContactMessage
         fields = ['name', 'email', 'message']
 
     def __init__(self, *args, **kwargs):
-        super(MessageForm, self).__init__(*args, **kwargs)
+        super(ContactMessageForm, self).__init__(*args, **kwargs)
         self.fields['name'].widget.attrs.update(
             {'class': 'form-control',
              'placeholder': 'Enter your Name...'})
