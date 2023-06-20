@@ -112,11 +112,6 @@
                         </div>
                     </li>
 
-                    <!-- Events link -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'events' %}">Events</a>
-                    </li>
-
                     <!-- Feedback link -->
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'testimonials' %}">Feedback</a>
@@ -313,6 +308,35 @@
             </div>
         </section>
         <!-- Section: Links  -->
+
+        <!-- Newsletter Signup -->
+        <div class="container-fluid g-5 mt-4">
+            <div class="row justify-content-lg-center justify-content-md-center">
+                <form method="POST" action="#" class="col-12 col-md-7 col-lg-6 col-xl-3 form-inline footer-borders">
+                    {% csrf_token %}
+                    <div class="form-group mb-2 text-center mt-3">
+                        <h5>Keep up to date with upcoming events and special offers<br>
+                            Sign up to our Newsletter here...
+                        </h5>
+                    </div>
+                    <div class="form-group container mt-4 mb-4 text-center">
+                        <label for="email" class="sr-only">Email</label>
+                        <input type="email" class="form-control w-75 mt-2" name="email" id="email"
+                            placeholder="Enter your Email...">
+                        <br>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        <button type="submit" class="btn mt-4 mb-4 metal linear newsletter">Sign Up</button>
+                    </div>
+                </form>
+
+                <span class="px-3 px-md-5">
+                    <a class="copyright text-decoration-underline text-uppercase" href="#">
+                        Unsubscribe
+                    </a>
+                </span>
+
+            </div>
+        </div>
 
 
         <!-- Copyright -->
