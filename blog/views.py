@@ -31,7 +31,7 @@ class BlogDetail(View):
 
         return render(
             request,
-            "blog_detail.html",
+            "blog/blog_detail.html",
             {
                 "blog": blog,
                 "liked": liked,
@@ -47,7 +47,7 @@ class BlogDetail(View):
 
         return render(
             request,
-            "blog_detail.html",
+            "blog/blog_detail.html",
             {
                 "blog": blog,
                 "liked": liked,

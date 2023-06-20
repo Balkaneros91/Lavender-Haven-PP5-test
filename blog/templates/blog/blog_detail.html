@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %}- Blog detailed{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% if messages %}
+<div id="msg">
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-6 masthead-text">
+                <!-- Blog title goes in these h1 tags -->
+                <h1 class="post-title">{{ blog.title }}</h1>
+                <!-- Blog author goes before the | the Blog's created date goes after -->
+                <p class="Blog-subtitle">{{ blog.author }} | {{ blog.created_on }}</p>
+            </div>
+            <div class="d-none d-md-block col-md-6 masthead-image">
+                <!-- The featured image URL goes in the src attribute -->
+                {% if "placeholder" in blog.featured_image.url %}
+                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
+                {% else %}
+                <img src="{{ blog.featured_image.url }}" width="100%">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col card mb-4  mt-3 left  top">
+            <div class="card-body">
+                <!-- The post content goes inside the card-text. -->
+                <!-- Use the | safe filter inside the template tags -->
+                <p class="card-text ">
+                    {{ blog.content | safe }}
+                </p>
+                <div class="row">
+
+                    <div class="col-1">
+                        <strong>
+                            {% if user.is_authenticated %}
+                            <form class="d-inline" action="{% url 'blog_like' blog.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if liked %}
+                                <button type="submit" name="blogpost_id" value="{{blog.slug}}" class="btn-like"><i
+                                        class="fas fa-heart"></i></button>
+                                {% else %}
+                                <button type="submit" name="blogpost_id" value="{{blog.slug}}" class="btn-like"><i
+                                        class="far fa-heart"></i></button>
+                                {% endif %}
+                            </form>
+
+                            {% else %}
+                            <span class="text-secondary"><i class="far fa-heart"></i></span>
+                            {% endif %}
+                            <!-- The number of likes goes before the closing strong tag -->
+                            <span class="text-secondary">{{ blog.number_of_likes }} </span>
+                        </strong>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <hr>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    setTimeout(function () {
+        let messages = document.getElementById('msg');
+        let alert = new bootstrap.Alert(messages);
+        alert.close();
+    }, 2500);
+</script>
+
+{% endblock content %}
