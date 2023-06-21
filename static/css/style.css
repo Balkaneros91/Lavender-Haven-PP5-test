@@ -2,16 +2,34 @@ html {
     height: 100%;
 }
 
+/* 
 * {
     margin: 0;
     padding: 0;
     border: none;
     box-sizing: border-box;
-}
+} */
 
 body {
     height: calc(100vh - 164px);
     overflow-y: scroll;
+}
+
+.header-container {
+    background-image: url('{% static "img/lavender_fields.jpeg" %}');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+}
+
+.motivational-text {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.shop-now-button {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
 }
 
 footer {
@@ -37,7 +55,7 @@ footer {
     }
 }
 
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
         top: 0;
@@ -77,4 +95,4 @@ footer {
     .header-container {
         padding-top: 200px;
     }
-}
+} */
