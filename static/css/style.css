@@ -40,6 +40,20 @@ footer {
 
 
 
+.bg-img-1 {
+    background: url('/static/img/lavendare-fields.jpeg') center/cover no-repeat;
+}
+
+.bg-img-2 {
+    background: url("{% static '/img/lavender-bush.jpg' %}") center/cover no-repeat;
+}
+
+.bg-img-3 {
+    background: url('/static/img/lavender_flowers_1.jpeg') center/cover no-repeat;
+}
+
+
+
 /* fixed top navbar only on medium and up */
 @media (min-width: 552px) {
     .fixed-top-desktop-only {
