@@ -8,7 +8,7 @@ html {
     padding: 0;
     border: none;
     box-sizing: border-box;
-    font-family: 'Rubik', sans-serif;
+    /* font-family: 'Rubik', sans-serif; */
 }
 
 /* body {
@@ -26,6 +26,7 @@ body {
     height: calc(100vh - 164px);
     color: #555;
     font-family: 'Lato';
+    overflow-y: scroll;
 }
 
 
@@ -49,26 +50,23 @@ nav {
 }
 
 
-.header-container {
-    background: url('{% static "img/lavender_fields.jpeg" %}');
-    background-size: cover;
-    background-position: center;
-    height: 400px;
-}
 
 
 
 
-
-
-.motivational-text {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+h1.display-4 {
+    background: lavender;
+    opacity: 0.8;
+    color: black;
 }
 
 .shop-now-button {
     font-size: 1.5rem;
     padding: 1rem 2rem;
+    background: lavender;
+    opacity: 0.8;
+    color: black;
+    border-radius: 20px;
 }
 
 footer {
