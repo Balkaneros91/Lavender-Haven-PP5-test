@@ -131,7 +131,12 @@
                         aria-haspopup="true" aria-expanded="false">
                         <div class="text-center">
                             <div><i class="fas fa-user fa-lg"></i></div>
+                            {% if request.user.is_authenticated %}
+                            <!-- Display username for respective logged in user -->
+                            <p class="my-0">Hi, {{ request.user.username }}</p>
+                            {% else %}
                             <p class="my-0">My Account</p>
+                            {% endif %}
                         </div>
                     </a>
                     <div class="dropdown-menu border-0" aria-labelledby="user-options">
@@ -139,9 +144,9 @@
                         {% if request.user.is_superuser %}
                         <a href="#" class="dropdown-item">Product Management</a>
                         {% endif %}
-                        <a href="#" class="dropdown-item">My Profile</a>
-                        <!-- Add username for respective logged in user -->
+                        <a href="{% url 'home' %}" class="dropdown-item">My Profile</a>
                         <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                        <!-- Display username -->
                         {% else %}
                         <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                         <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
@@ -171,7 +176,18 @@
 
     </header>
 
-    {% if messages %} <div class="message-container">
+    <!-- {% if messages %}
+    <div class="message-container">
+    </div>
+    {% endif %} -->
+
+    {% if messages %}
+    <div id="msg">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
     </div>
     {% endif %}
 
