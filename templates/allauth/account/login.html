@@ -1,5 +1,32 @@
 {% extends "base.html" %}
 
+{% load static %}
+
+{% block extra_title %}- Blog detailed{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% if messages %}
+<div id="msg">
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+
+
+
+
+
 {% load i18n %}
 {% load account socialaccount %}
 
