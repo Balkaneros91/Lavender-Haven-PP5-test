@@ -1,4 +1,6 @@
 from django.db import models
+import uuid
+import random
 
 
 class Category(models.Model):
@@ -28,3 +30,22 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+    def generate_random_rating(self):
+        # Generate a random rating between 0 and 5
+        return round(random.uniform(0, 5), 2)
+
+    def save(self, *args, **kwargs):
+        if not self.sku:
+            # Generate a unique SKU using UUID
+            self.sku = str(uuid.uuid4())
+
+        # Save the image URL if it is provided
+        if self.image and not self.image_url:
+            self.image_url = self.image.url
+
+        if not self.rating:
+            # Generate a random rating if it is not provided
+            self.rating = self.generate_random_rating()
+
+        super().save(*args, **kwargs)
