@@ -44,7 +44,7 @@
     <div class="row">
 
         <!-- Contact form -->
-        <div class="col-lg-6 text-center p-4 mt-5" id="contact-form">
+        <div class="col text-center p-4 mt-5" id="contact-form">
             <p class="artist-title border-bottom border-2">Get in Touch</p>
             <form method="POST" action="#">
                 {% csrf_token %}
@@ -79,41 +79,6 @@
             </form>
         </div>
     </div>
-</div>
-
-<!-- Contact form -->
-<h1 class="p-2 text-center metal-light d-lg-none contact-me">Contact Me</h1>
-<div class="contact-form text-center p-4 mt-0 d-lg-none mx-auto" id="contact-form-mobile">
-    <form method="POST" action="#">
-        {% csrf_token %}
-        <p>
-            Got an idea for a piece you would like to commission?
-            <br>
-            Want a stall set up at your event?
-            <br>
-            Need some help with an order?
-            <br>
-            Whatever it is I would love to hear from you.
-        </p>
-        <div class="form-group">
-            <input type="text" class="form-control w-75" name="name" aria-describedby="name"
-                placeholder="Enter your name...">
-        </div>
-
-        <div class="form-group mt-3">
-            <input type="email" class="form-control w-75" name="email" aria-describedby="email"
-                placeholder="Enter your email...">
-        </div>
-        <small class="form-text text-muted">
-            We'll never share your email with anyone else.
-        </small>
-
-        <div class="form-group mt-3">
-            <textarea class="form-control w-75" name="message" rows="5" placeholder="Enter your message..."></textarea>
-        </div>
-        <input type="hidden" name="redirect_url" value="{{ request.path }}">
-        <button type="submit" class="btn metal linear mt-3">Send</button>
-    </form>
 </div>
 
 </div>
