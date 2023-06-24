@@ -326,103 +326,38 @@
                                 </div>
                                 <!-- Grid column -->
 
-                                <!-- Grid column -->
-                                <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-4">
-                                    <!-- Newsletter Signup Column -->
-                                    <form method="POST" action="#" class="footer-borders">
-                                        {% csrf_token %}
-                                        <div class="form-group mb-2 text-center mt-3">
-                                            <h5>Keep up to date with upcoming events and special offers<br> Sign up
-                                                to
-                                                our Newsletter
-                                                here...</h5>
-                                        </div>
-                                        <div class="form-group container mt-4 mb-4 text-center">
-                                            <label for="email" class="sr-only">Email</label>
-                                            <input type="email" class="form-control w-75 mt-2" name="email" id="email"
-                                                placeholder="Enter your Email...">
-                                            <br>
-                                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                            <button type="submit" class="btn mt-4 mb-4 metal linear newsletter">Sign
-                                                Up</button>
-                                            <a class="unsubscribe text-decoration-underline text-uppercase"
-                                                href="#">Unsubscribe</a>
-                                        </div>
-                                    </form>
-                                </div>
-                                <!-- Grid column -->
 
-
-                                <!-- Newsletter NEW -->
-                                <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-4">
-                                    <!-- Newsletter Signup Column -->
-                                    <form id="newsletter-form" method="POST" action="#" class="footer-borders">
-                                        {% csrf_token %}
-                                        <div class="form-group mb-2 text-center mt-3">
-                                            <h5>Keep up to date with upcoming events and special offers<br> Sign up to our Newsletter here...</h5>
-                                        </div>
-                                        <div class="form-group container mt-4 mb-4 text-center">
-                                            <label for="email" class="sr-only">Email</label>
-                                            <input type="email" class="form-control w-75 mt-2" name="email" id="email"
-                                                placeholder="Enter your Email...">
-                                            <br>
-                                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                            <button type="submit" class="btn mt-4 mb-4 metal linear newsletter">Sign Up</button>
-                                            <a id="unsubscribe-link" class="unsubscribe text-decoration-underline text-uppercase"
-                                                href="#">Unsubscribe</a>
-                                        </div>
-                                    </form>
-                                </div>
-
-
-                                <!-- Newletter latest version -->
-                                <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-4">
-                                    <!-- Newsletter Signup Column -->
-                                    <div class="text-center mt-3">
-                                        <h5>Keep up to date with upcoming events and special offers<br> Sign up to our Newsletter here...</h5>
-                                    </div>
-                                    <div class="text-center mt-4 mb-4">
-                                        <button type="button" class="btn mt-4 mb-4 metal linear newsletter" data-toggle="modal"
-                                            data-target="#subscribeModal">
-                                            Sign Up
-                                        </button>
-                                        <a id="unsubscribe-link" class="unsubscribe text-decoration-underline text-uppercase" href="#">Unsubscribe</a>
-                                    </div>
-                                </div>
-                                
-                                <!-- Subscribe Modal -->
-                                <div class="modal fade" id="subscribeModal" tabindex="-1" role="dialog" aria-labelledby="subscribeModalLabel"
-                                    aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="subscribeModalLabel">Subscribe to Our Newsletter</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
+                                <!-- Newsletter Signup -->
+                                <div class="container-fluid g-5 mt-4">
+                                    <div class="row justify-content-lg-center justify-content-md-center">
+                                        <form method="POST" action="{% url 'newsletter' %}"
+                                            class="col-12 col-md-7 col-lg-6 col-xl-3 form-inline footer-borders">
+                                            {% csrf_token %}
+                                            <div class="form-group mb-2 text-center mt-3">
+                                                <h5>Keep up to date with upcoming events and special offers<br>
+                                                    Sign up to our Newsletter here...
+                                                </h5>
                                             </div>
-                                            <form method="POST" action="#" class="footer-borders">
-                                                {% csrf_token %}
-                                                <div class="modal-body">
-                                                    <div class="form-group">
-                                                        <label for="email" class="sr-only">Email</label>
-                                                        <input type="email" class="form-control" name="email" id="email"
-                                                            placeholder="Enter your Email...">
-                                                    </div>
-                                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="submit" class="btn metal linear newsletter">Sign Up</button>
-                                                </div>
-                                            </form>
-                                        </div>
+                                            <div class="form-group container mt-4 mb-4 text-center">
+                                                <label for="email" class="sr-only">Email</label>
+                                                <input type="email" class="form-control w-75 mt-2" name="email"
+                                                    id="email" placeholder="Enter your Email...">
+                                                <br>
+                                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                                <button type="submit" class="btn mt-4 mb-4 metal linear newsletter">Sign
+                                                    Up</button>
+                                                <span class="px-3 px-md-5">
+                                                    <a class="copyright text-decoration-underline text-uppercase" href="{% url 'unsubscribe' %}">
+                                                        Unsubscribe
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </form>
+                                        
                                     </div>
+                                    <!-- Grid row -->
                                 </div>
-
-
-
                             </div>
-                            <!-- Grid row -->
                         </div>
                     </section>
                     <!-- Section: Maps and Newsletter -->
@@ -442,12 +377,12 @@
                                         class="fab fa-twitter"></i></a>
 
                                 <a href="https://www.google.com" target="_blank" rel="noopener"
-                                    aria-label="Find us on Google (link opens in a new tab)" class="m-2 text-black"><i 
+                                    aria-label="Find us on Google (link opens in a new tab)" class="m-2 text-black"><i
                                         class="fab fa-google"></i></a>
 
                                 <a href="https://www.instagram.com" target="_blank" rel="noopener"
-                                    aria-label="Find us on Instagram (link opens in a new tab)" class="m-2 text-black"><i
-                                        class="fab fa-instagram"></i></a>
+                                    aria-label="Find us on Instagram (link opens in a new tab)"
+                                    class="m-2 text-black"><i class="fab fa-instagram"></i></a>
 
                                 <a href="https://www.linkedin.com" target="_blank" rel="noopener"
                                     aria-label="Find us on Linkedin (link opens in a new tab)" class="m-2 text-black"><i
@@ -471,7 +406,7 @@
                         </div>
 
                         <p class="text-center text-black">Made by Antonio-Claudio Andelic for PP5</p>
-                        
+
                     </section>
                     <!-- Section: Social media -->
 
