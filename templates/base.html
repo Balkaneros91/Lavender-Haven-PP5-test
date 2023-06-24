@@ -351,6 +351,76 @@
                                     </form>
                                 </div>
                                 <!-- Grid column -->
+
+
+                                <!-- Newsletter NEW -->
+                                <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-4">
+                                    <!-- Newsletter Signup Column -->
+                                    <form id="newsletter-form" method="POST" action="#" class="footer-borders">
+                                        {% csrf_token %}
+                                        <div class="form-group mb-2 text-center mt-3">
+                                            <h5>Keep up to date with upcoming events and special offers<br> Sign up to our Newsletter here...</h5>
+                                        </div>
+                                        <div class="form-group container mt-4 mb-4 text-center">
+                                            <label for="email" class="sr-only">Email</label>
+                                            <input type="email" class="form-control w-75 mt-2" name="email" id="email"
+                                                placeholder="Enter your Email...">
+                                            <br>
+                                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                            <button type="submit" class="btn mt-4 mb-4 metal linear newsletter">Sign Up</button>
+                                            <a id="unsubscribe-link" class="unsubscribe text-decoration-underline text-uppercase"
+                                                href="#">Unsubscribe</a>
+                                        </div>
+                                    </form>
+                                </div>
+
+
+                                <!-- Newletter latest version -->
+                                <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-4">
+                                    <!-- Newsletter Signup Column -->
+                                    <div class="text-center mt-3">
+                                        <h5>Keep up to date with upcoming events and special offers<br> Sign up to our Newsletter here...</h5>
+                                    </div>
+                                    <div class="text-center mt-4 mb-4">
+                                        <button type="button" class="btn mt-4 mb-4 metal linear newsletter" data-toggle="modal"
+                                            data-target="#subscribeModal">
+                                            Sign Up
+                                        </button>
+                                        <a id="unsubscribe-link" class="unsubscribe text-decoration-underline text-uppercase" href="#">Unsubscribe</a>
+                                    </div>
+                                </div>
+                                
+                                <!-- Subscribe Modal -->
+                                <div class="modal fade" id="subscribeModal" tabindex="-1" role="dialog" aria-labelledby="subscribeModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="subscribeModalLabel">Subscribe to Our Newsletter</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <form method="POST" action="#" class="footer-borders">
+                                                {% csrf_token %}
+                                                <div class="modal-body">
+                                                    <div class="form-group">
+                                                        <label for="email" class="sr-only">Email</label>
+                                                        <input type="email" class="form-control" name="email" id="email"
+                                                            placeholder="Enter your Email...">
+                                                    </div>
+                                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn metal linear newsletter">Sign Up</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
                             </div>
                             <!-- Grid row -->
                         </div>
@@ -409,6 +479,30 @@
             </div>
         </div>
     </footer>
+
+
+    <!-- <script>
+        $(document).ready(function () {
+            // Show the newsletter form in a pop-up window
+            $('.newsletter-btn').click(function (e) {
+                e.preventDefault();
+                $('#newsletter-form').addClass('show-popup');
+            });
+
+            // Hide the pop-up window when the close button is clicked
+            $('.close-btn').click(function (e) {
+                e.preventDefault();
+                $('#newsletter-form').removeClass('show-popup');
+                $('#unsubscribe-form').removeClass('show-popup');
+            });
+
+            // Show the unsubscribe form in a pop-up window
+            $('#unsubscribe-link').click(function (e) {
+                e.preventDefault();
+                $('#unsubscribe-form').addClass('show-popup');
+            });
+        });
+    </script> -->
 
 
     <!-- JS -->
