@@ -3,25 +3,42 @@ from django import forms
 from .models import ContactMessage
 
 
-class ContactMessageForm(ModelForm):
+class ContactMessageForm(forms.ModelForm):
     class Meta:
         model = ContactMessage
         fields = ['name', 'email', 'message_subject', 'message']
 
-    def __init__(self, *args, **kwargs):
-        super(ContactMessageForm, self).__init__(*args, **kwargs)
-        self.fields['name'].widget.attrs.update(
-            {'class': 'form-control',
-             'placeholder': 'Enter your Name...'})
-        self.fields['email'].widget.attrs.update(
-            {'class': 'form-control',
-             'placeholder': 'Enter your Email...'})
-        self.fields['message_subject'].widget.attrs.update(
-            {'class': 'form-control',
-             'placeholder': 'Name the messages subject...'})
-        self.fields['message'].widget.attrs.update(
-            {'class': 'form-control',
-             'placeholder': 'Enter your Message...'})
+        widgets = {
+            'name': forms.TextInput(attrs={'placeholder': 'Enter your name',
+                                    'required': True}),
+            'email': forms.EmailInput
+            (attrs={'placeholder': 'Enter your email'}),
+
+            'message_subject': forms.TextInput
+            (attrs={'placeholder': 'Enter message title'}),
+
+            'message': forms.TextInput
+            (attrs={'placeholder': 'Enter your message'}),
+        }
+
+    # def __init__(self, *args, **kwargs):
+    #     super(ContactMessageForm, self).__init__(*args, **kwargs)
+    #     self.fields['name'].widget.attrs.update(
+    #         {'class': 'form-control',
+    #          'placeholder': 'Enter your Name...'})
+    #     self.fields['email'].widget.attrs.update(
+    #         {'class': 'form-control',
+    #          'placeholder': 'Enter your Email...'})
+    #     self.fields['message_subject'].widget.attrs.update(
+    #         {'class': 'form-control',
+    #          'placeholder': 'Name the messages subject...'})
+    #     self.fields['message'].widget.attrs.update(
+    #         {'class': 'form-control',
+    #          'placeholder': 'Enter your Message...'})
+
+
+
+
 
 
 # class ContactForm(forms.ModelForm):
