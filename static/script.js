@@ -1,7 +1,5 @@
-$(document).ready(function () {
-    // Show the unsubscribe form in a modal pop-up
-    $('#unsubscribe-link').click(function (e) {
-        e.preventDefault();
-        $('#unsubscribeModal').modal('show');
-    });
-});
+// Messages
+
+setTimeout(function () {
+    document.getElementById('msg').classList.add('hide');
+}, 15000);

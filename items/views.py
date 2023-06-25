@@ -64,4 +64,3 @@ def all_products(request):
     }
 
     return render(request, 'items/items.html', context)
-    

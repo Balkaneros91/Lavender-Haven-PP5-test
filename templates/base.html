@@ -187,7 +187,7 @@
     </div>
     {% endif %} -->
 
-    {% if messages %}
+    <!-- {% if messages %}
     <div id="msg">
         {% for message in messages %}
         <div class="alert alert-{{ message.tags }}">
@@ -195,7 +195,8 @@
         </div>
         {% endfor %}
     </div>
-    {% endif %}
+    {% endif %} -->
+
 
     <!-- Message -->
     <div class="container-fluid">
@@ -211,8 +212,9 @@
         </div>
     </div>
 
+
     <!-- Django messages -->
-    {% if messages %}
+    <!-- {% if messages %}
     <div class="toast-container rounded position-fixed end-0 p-3">
         {% for message in messages %}
         {% with message.level as level %}
@@ -228,7 +230,7 @@
         {% endwith %}
         {% endfor %}
     </div>
-    {% endif %}
+    {% endif %} -->
 
 
 
@@ -239,6 +241,9 @@
     {% endblock %}
 
     {% block postloadjs %}
+    <script type="text/javascript">
+        $('.toast').toast('show');
+    </script>
     {% endblock %}
 
     <!-- Footer -->

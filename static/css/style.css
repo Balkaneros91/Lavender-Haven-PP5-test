@@ -57,6 +57,13 @@ nav.navbar a {
 }
 
 
+/* Message - alert */
+
+.alert {
+    margin-top: 100px;
+}
+
+
 /* Footer */
 
 footer {
