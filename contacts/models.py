@@ -28,10 +28,12 @@ class ContactMessage(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=200, blank=False, null=True)
     email = models.EmailField(max_length=500, blank=False, null=True)
+    message_subject = models.CharField(
+        'subject', max_length=50, blank=False, null=True)
     message = models.TextField(max_length=1000, blank=False, null=True)
 
     class Meta:
         ordering = ['-created_on']
 
     def __str__(self):
-        return str(f"New message from {self.name}")
+        return self.email

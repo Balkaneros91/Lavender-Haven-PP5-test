@@ -16,6 +16,6 @@ class OpenHoursAdmin(admin.ModelAdmin):
 
 @admin.register(ContactMessage)
 class ContactMessageAdmin(admin.ModelAdmin):
-    list_filter = ('name', 'email', 'created_on')
-    list_display = ('name', 'email', 'created_on')
-    search_fields = ('name', 'email', 'created_on')
+    list_filter = ('name', 'email', 'created_on', 'message_subject')
+    list_display = ('name', 'email', 'created_on', 'message_subject')
+    search_fields = ('name', 'email', 'created_on', 'message_subject')
