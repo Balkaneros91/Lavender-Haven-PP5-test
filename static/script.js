@@ -13,3 +13,7 @@ setTimeout(function () {
 //         }
 //     }, 5000);
 // });
+
+$(document).ready(function () {
+    $('.dropdown-toggle').dropdown();
+});

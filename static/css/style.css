@@ -130,11 +130,23 @@ iframe {
 
 .card-body {
     background-color: lavender;
-    border: 1px solid black;
+}
+
+.card {
+    border: 1px solid rgb(0 0 0);
 }
 
 .card-body a {
     color: black;
+}
+
+.card-footer {
+    background-color: lavender;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: 300px;
 }
 
 .card-body a:hover {
