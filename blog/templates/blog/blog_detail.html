@@ -11,19 +11,8 @@
 </div>
 {% endblock %}
 
-{% if messages %}
-<div id="msg">
-    {% for message in messages %}
-    <div class="alert alert-{{ message.tags }}">
-        {{ message }}
-    </div>
-    {% endfor %}
-</div>
-{% endif %}
 
 {% block content %}
-
-{% load crispy_forms_tags %}
 
 <div class="masthead">
     <div class="container">
@@ -34,21 +23,13 @@
                 <!-- Blog author goes before the | the Blog's created date goes after -->
                 <p class="Blog-subtitle">{{ blog.author }} | {{ blog.created_on }}</p>
             </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                <!-- The featured image URL goes in the src attribute -->
-                {% if "placeholder" in blog.featured_image.url %}
-                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
-                {% else %}
-                <img src="{{ blog.featured_image.url }}" width="100%">
-                {% endif %}
-            </div>
         </div>
     </div>
 </div>
 
 <div class="container">
     <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
+        <div class="col mb-4  mt-3 left  top">
             <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
@@ -84,14 +65,12 @@
         </div>
     </div>
 
-</div>
+    <div class="row">
+        <div class="col">
+            <a href="{% url 'blog' %}" class="btn btn-secondary">Back to Blog</a>
+        </div>
+    </div>
 
-<script>
-    setTimeout(function () {
-        let messages = document.getElementById('msg');
-        let alert = new bootstrap.Alert(messages);
-        alert.close();
-    }, 2500);
-</script>
+</div>
 
 {% endblock content %}
