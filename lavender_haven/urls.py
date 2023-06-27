@@ -21,22 +21,19 @@ from .views import handler404, handler500, handler403, handler400
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
+    path('accounts/', include('allauth.urls')),
     path('', include('home.urls')),
     path('about/', include('about.urls')),
-    path('contacts/', include('contacts.urls')),
     path('blog/', include('blog.urls')),
+    path('contacts/', include('contacts.urls')),
     path('items/', include('items.urls')),
     # path('testimonials/', include('testimonials.urls')),
+    path('profile/', include('profiles.urls')),
     path('cart/', include('cart.urls')),
     path('checkout/', include('checkout.urls')),
     path('subscription/', include('subscription.urls')),
-
-    path('accounts/', include('allauth.urls')),
     path('summernote/', include('django_summernote.urls')),
-]
-
-# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'lavender_haven.views.handler404'
 handler500 = 'lavender_haven.views.handler500'
