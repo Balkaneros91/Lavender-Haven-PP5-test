@@ -20,3 +20,11 @@ class ProductForm(forms.ModelForm):
         self.fields['image'].label = False
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'
+
+    # def save(self, commit=True):
+    #     instance = super().save(commit=False)
+    #     instance.image = self.cleaned_data.get(
+    #         'image')  # Set the Cloudinary image here
+    #     if commit:
+    #         instance.save()
+    #     return instance

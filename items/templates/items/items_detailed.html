@@ -15,7 +15,15 @@
     <div class="row">
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             <div class="image-container my-5">
-                {% if product.image %}
+
+                <!-- {% if "placeholder" in product.image.url %}
+                <img src="{{ MEDIA_URL }}noimage.png" alt="No image available">
+                {% else %}
+                <img src="{{ product.image.url }}" alt="#{{ product.name }}">
+                {% endif %} -->
+
+
+                {% if "placeholder" in product.image %}
                 <a href="{{ product.image.url }}" target="_blank">
                     <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                 </a>
