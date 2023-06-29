@@ -15,12 +15,19 @@
 
 {% block content %}
 
-<div class="conatiner-fluid">
+<!-- Delivery Banner -->
+<div id="delivery-banner" class="delivery-bg row text-center delivery-banner-mobile">
+    <div class="col">
+        <h4 class="delivery-font my-1">Free delivery on orders over €{{ free_delivery_threshold }}!</h4>
+    </div>
+</div>
+
+<div class="conatiner-fluid m-5">
     <div class="row">
 
 
 
-        <div class="col d-flex justify-content-center align-items-strech">
+        <div class="col d-flex justify-content-center align-items-strech border border-lavender">
             <div id="filterContainer" class="btn-group" role="group"
                 aria-label="Button group with nested dropdown categories">
                 <div class="btn-group dropdown-center text-center px-4" role="group">
@@ -97,8 +104,8 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col text-center mt-3">
-            <h2 class="logo-font pt-5">Items</h2>
+        <div class="col text-center">
+            <h2 class="logo-font">Items</h2>
             {% for c in current_categories %}
             <a class="category-badge text-decoration-none" href="{% url 'items' %}?category={{ c.name }}">
                 <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name
@@ -222,7 +229,7 @@
     </div>
 </div>
 
-<div class="btt-button shadow-sm rounded-0 border border-black">
+<div class="btt-button rounded-0 p-3">
     <a class="btt-link d-flex h-100">
         <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
     </a>

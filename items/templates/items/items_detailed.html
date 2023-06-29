@@ -11,11 +11,19 @@
 
 {% block content %}
 
-<div class="container-fluid">
+<!-- Delivery Banner -->
+<div id="delivery-banner" class="delivery-bg row text-center delivery-banner-mobile">
+    <div class="col">
+        <h4 class="delivery-font my-1">Free delivery on orders over €{{ free_delivery_threshold }}!</h4>
+    </div>
+</div>
+
+<div class="conatiner-fluid m-5">
     <div class="row">
 
 
-        <div class="col d-flex justify-content-center align-items-strech">
+
+        <div class="col d-flex justify-content-center align-items-strech border border-lavender">
             <div id="filterContainer" class="btn-group" role="group"
                 aria-label="Button group with nested dropdown categories">
                 <div class="btn-group dropdown-center text-center px-4" role="group">
@@ -24,10 +32,9 @@
                         Order By
                     </button>
                     <ul class="dropdown-menu rounded-0 text-center" aria-labelledby="orderBy">
-                        <li><a href="{% url 'items' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                        <li><a href="{% url 'items' %}?sort=price&direction=asc" class="dropdown-item">By Price</a></li>
+                        <li><a href="{% url 'items' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
                         </li>
-                        <li><a href="{% url 'items' %}?sort=rating&direction=desc" class="dropdown-item ">By
-                                Rating</a></li>
                         <li><a href="{% url 'items' %}?sort=category&direction=asc" class="dropdown-item ">By
                                 Category</a>
                         </li>
@@ -44,13 +51,13 @@
                     </button>
                     <ul class="dropdown-menu rounded-0 text-center" aria-labelledby="orderBy">
                         <li><a href="{% url 'items' %}?category=toys" class="dropdown-item">Toys</a></li>
-                        <li><a href="{% url 'items' %}?category=brain_teasers" class="dropdown-item">Brain
-                                Teasers</a></li>
+                        <li><a href="{% url 'items' %}?category=brain_teasers" class="dropdown-item">Brain Teasers</a>
+                        </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a href="{% url 'items' %}?category=toys,brain_teasers" class="dropdown-item">All
-                                Fun</a></li>
+                        <li><a href="{% url 'items' %}?category=toys,brain_teasers" class="dropdown-item">All Fun</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="btn-group dropdown-center text-center px-4" role="group">
@@ -78,8 +85,8 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a href="{% url 'items' %}?category=deals,clearance" class="dropdown-item">All
-                                Specials</a></li>
+                        <li><a href="{% url 'items' %}?category=deals,clearance" class="dropdown-item">All Specials</a>
+                        </li>
                     </ul>
                 </div>
             </div>
