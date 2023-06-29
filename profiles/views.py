@@ -7,9 +7,27 @@ from .forms import UserProfileForm
 # from checkout.models import Order
 
 
+# @login_required
+# def profile(request):
+#     """ Display the user's profile. """
+#     try:
+#         profile = request.user.userprofile
+#     except UserProfile.DoesNotExist:
+#         profile = UserProfile.objects.create(user=request.user)
+
+#     # Rest of your view code...
+
+
+
 @login_required
 def profile(request):
     """ Display the user's profile. """
+
+    try:
+        profile = request.user.userprofile
+    except UserProfile.DoesNotExist:
+        profile = UserProfile.objects.create(user=request.user)
+
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
