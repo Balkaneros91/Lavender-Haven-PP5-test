@@ -91,12 +91,18 @@
                             <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-4">
 
                                 <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+
+                                <p><strong>Name: </strong>{{ contacts.name }}</p>
+
                                 <p><i class="fas fa-home me-3"></i> Hvar Island, Brusje, Croatia</p>
-                                <p>
-                                    <i class="fas fa-envelope me-3"></i>
-                                    lavender.haven@example.com
-                                </p>
+                                <p><strong>Address: </strong>{{ contacts.address }}</p>
+
+                                <p><i class="fas fa-envelope me-3"></i>lavender.haven@example.com</p>
+                                <p><strong>Email: </strong>{{ contacts.email }}</p>
+
                                 <p><i class="fas fa-phone me-3"></i> + 385 21 892 096</p>
+                                <p><strong>Phone number: </strong>{{ contacts.phone_number }}</p>
+
                                 <a href="{% url 'contacts' %}" class="btn btn-secondary mt-3">Contact Us!</a>
 
                             </div>
@@ -120,7 +126,8 @@
                                             placeholder="Enter your Email...">
 
                                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                        <button type="submit" class="btn btn-secondary mt-4 mb-4 metal linear newsletter">Subscribe</button>
+                                        <button type="submit"
+                                            class="btn btn-secondary mt-4 mb-4 metal linear newsletter">Subscribe</button>
                                         <a class="btn btn-secondary unsubscribe text-decoration-underline"
                                             href="{% url 'unsubscribe' %}">Unsubscribe</a>
                                     </div>
