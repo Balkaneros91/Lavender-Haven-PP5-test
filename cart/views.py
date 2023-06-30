@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 
 
 def cart_view(request):
-    """ A view to return the cart page """
+    """ A view to return the shopping cart page """
 
     return render(request, 'cart/cart.html')
 
