@@ -96,7 +96,7 @@ iframe {
 }
 
 
-/* Newletter */
+/* Newsletter */
 
 .unsubscribe {
     margin-left: 10px;
@@ -186,6 +186,11 @@ iframe {
 
 .border-lavender {
     border: 1px solid #ab91ac !important;
+}
+
+a.category-badge>span.badge:hover {
+    background: #212529 !important;
+    color: #fff !important;
 }
 
 @media (max-width: 767px) {
