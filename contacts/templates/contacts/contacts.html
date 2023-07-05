@@ -49,15 +49,7 @@
             <p class="artist-title border-bottom border-2">Get in Touch</p>
             <form method="POST" action="{% url 'contacts' %}">
                 {% csrf_token %}
-                <p>
-                    Got an idea for a piece you would like to commission?
-                    <br>
-                    Want a stall set up at your event?
-                    <br>
-                    Need some help with an order?
-                    <br>
-                    Whatever it is I would love to hear from you.
-                </p>
+                <p>In case your have an question, suggestion, feedback, please drop us a message</p>
                 <div class="form-group">
                     <input type="text" class="form-control" name="name" aria-describedby="name"
                         placeholder="Enter your name...">
@@ -69,7 +61,7 @@
                 </div>
 
                 <small class="form-text text-muted">
-                    We'll never share your email with anyone else.
+                    Your email address is safe with us!
                 </small>
 
                 <div class="form-group mt-3">
@@ -83,14 +75,11 @@
                 </div>
 
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                <button type="submit" class="btn metal linear mt-3">Send</button>
+                <button type="submit" class="btn metal linear mt-3">Submit</button>
             </form>
         </div>
 
     </div>
-</div>
-
-</div>
 </div>
 
 {% endblock %}
