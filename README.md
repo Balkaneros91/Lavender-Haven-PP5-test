@@ -38,7 +38,7 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 
 Happy coding!
 
-# Restaurant Cubaneros / Lavender Haven
+# Lavender Haven
 
 ![mockup](readme_img/amiresponsive.png)
 
